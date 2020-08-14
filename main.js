@@ -29,7 +29,7 @@
   // 1. check query string
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get('q');
-  if (query.length === 0) {
+  if (!query) {
     showMainPage();
     return;
   }
