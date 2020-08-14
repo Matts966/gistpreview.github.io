@@ -1,6 +1,6 @@
 (function () {
   function showMainPage () {
-    document.getElementById('full_iframe').className = 'container';  // remove class 'hide'
+    document.getElementById('main').className = 'container';  // remove class 'hide'
     document.getElementById('loading').className += ' hide';  // add class 'hide'
   }
 
@@ -69,7 +69,7 @@
 
     // 5. write data
     var content = info.files[fileName].content;
-    document.getElementById('full_iframe').contentWindow.document.write(content);
+    document.write(content);
   })
   .catch(function (err) {
     showMainPage();
