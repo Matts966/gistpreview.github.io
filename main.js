@@ -68,7 +68,6 @@
     }
 
     // 5. write data
-    document.domain = "gist.github.com";
     var content = info.files[fileName].content;
     document.write(content);
   })
