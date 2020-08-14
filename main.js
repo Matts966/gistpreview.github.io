@@ -1,6 +1,6 @@
 (function () {
   function showMainPage () {
-    document.getElementById('main').className = 'container';  // remove class 'hide'
+    document.getElementById('full_iframe').className = 'container';  // remove class 'hide'
     document.getElementById('loading').className += ' hide';  // add class 'hide'
   }
 
