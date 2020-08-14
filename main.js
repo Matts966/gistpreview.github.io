@@ -70,6 +70,7 @@
     // 5. write data
     var content = info.files[fileName].content;
     document.getElementById('full_iframe').contentWindow.document.write(content);
+    document.getElementById('loading').className += ' hide'; 
   })
   .catch(function (err) {
     showMainPage();
