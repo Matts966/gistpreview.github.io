@@ -13,10 +13,10 @@
   }
 
   function submit () {
-    var query = document.getElementById('gist_id').value;
+    var query = "q=" + document.getElementById('gist_id').value;
     var fileName = document.getElementById('file_name').value;
     if (fileName) {
-      query += '/' + fileName;
+      query += '&f=' + fileName;
     }
     location.search = query;  // page will be refreshed
   }
@@ -27,16 +27,16 @@
   }
 
   // 1. check query string
-  var query = location.search.substring(1);
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q');
   if (query.length === 0) {
     showMainPage();
     return;
   }
 
   // 2. get gist id and file name
-  query = query.split(/[\/&]+/);
-  var gistId = query[0];
-  var fileName = decodeURIComponent(query[1] || '');
+  const gistId = query;
+  var fileName = decodeURIComponent(urlParams.get('f') || '');
 
   // 3. write data to blank
   document.getElementById('gist_id').value = gistId;
